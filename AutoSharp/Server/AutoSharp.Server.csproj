@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<RunAOTCompilation>true</RunAOTCompilation>
+	<PublishTrimmed>false</PublishTrimmed>
+	<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+	<DebugSymbols>false</DebugSymbols>
+	<DebugType>none</DebugType>
+	<BlazorWebAssemblyOmitDebugProxyOutput>true</BlazorWebAssemblyOmitDebugProxyOutput>
+	<AllowedReferenceRelatedFileExtensions>
+		*.pdb;
+		*.xml;
+	</AllowedReferenceRelatedFileExtensions>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\AutoSharp.Client.csproj" />
+    <ProjectReference Include="..\Shared\AutoSharp.Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>
